@@ -1,1 +1,5 @@
 Explain the code execution based on the order of the messages logged in src/quiz/promise-2darray.txt.
+
+The function sum2DArray initiates a promise executed on the main thread. 
+This promise is processed in the event loop, employing setTimeout to schedule a callback for array summation. 
+Concurrently, a second invocation of sum2DArray by the main thread occurs but is rejected due to the input being a non-array object, resulting in the absence of new callbacks associated with the promise. Ultimately, the resolution of the first call takes place.
